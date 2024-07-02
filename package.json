@@ -3,24 +3,34 @@
   "version": "1.0.0",
   "main": "server.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "npx prettier --write ./src/",
+    "format:check": "npx prettier --check ./src/",
+    "start:dev": "ts-node-dev ./src/server.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@types/cors": "^2.8.17",
     "bcryptjs": "^2.4.3",
+    "chalk": "^4.1.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.3.3",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "sanitize-html": "^2.13.0",
+    "winston": "^3.13.0"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
     "@types/express": "^4.17.21",
     "@types/jsonwebtoken": "^9.0.6",
     "@types/morgan": "^1.9.9",
+    "@types/sanitize-html": "^2.11.0",
     "prettier": "^3.3.2",
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
