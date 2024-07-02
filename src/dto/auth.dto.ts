@@ -1,10 +1,4 @@
-import {
-    IsEmail,
-    IsEnum,
-    IsNotEmpty,
-    Length,
-    Matches
-} from 'class-validator';
+import { IsEmail, IsEnum, IsNotEmpty, Length, Matches } from 'class-validator';
 import { ROLE } from '../constant/enum';
 import { passwordRegex, phoneNumberRegex } from '../constant/regex';
 
@@ -29,7 +23,6 @@ export class CreateUserDTO {
         message: 'Enter a valid phone number',
     })
     phone!: string;
-
 }
 
 export class LoginUserDTO {
@@ -44,5 +37,3 @@ export class LoginUserDTO {
     })
     password!: string;
 }
-
-

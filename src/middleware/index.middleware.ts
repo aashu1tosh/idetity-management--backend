@@ -11,7 +11,6 @@ import { StatusCodes } from '../constant/statusCodes';
 import routes from '../routes/index.route';
 import { errorHandler } from './errorHandler.middleware';
 
-
 const middleware = (app: Application) => {
     app.use(
         cors({

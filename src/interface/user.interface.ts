@@ -1,8 +1,8 @@
-import { ROLE } from "../constant/enum";
+import { ROLE } from '../constant/enum';
 
 export interface UserCredentials {
-    email: string,
-    password: string,
+    email: string;
+    password: string;
 }
 
 export interface IUser {
