@@ -1,3 +1,5 @@
+import { ROLE } from "../constant/enum";
+
 export interface UserCredentials {
     email: string,
     password: string,
@@ -8,4 +10,5 @@ export interface IUser {
     phone: string;
     email: string;
     password: string;
+    role: ROLE;
 }
