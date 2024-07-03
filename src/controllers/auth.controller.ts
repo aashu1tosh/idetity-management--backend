@@ -13,23 +13,14 @@ class AuthController {
         });
     }
 
-    // async login(req: Request, res: Response) {
-    //     const response = await authServices.loginUser(req.body);
-    //     res.status(StatusCodes.SUCCESS).json({
-    //         success: true,
-    //         message: 'Login Successful',
-    //         main: response,
-    //     });
-    // }
-
-    // async updatePassword(req: Request, res: Response) {
-    //     const id = res?.locals?.id?.id;
-    //     await authService.updatePassword(req.body, id);
-    //     res.status(StatusCodes.SUCCESS).json({
-    //         success: true,
-    //         message: 'Password updated successfully',
-    //     });
-    // }
+    async login(req: Request, res: Response) {
+        const response = await authServices.loginUser(req.body);
+        res.status(StatusCodes.SUCCESS).json({
+            success: true,
+            message: 'Login Successful',
+            data: response,
+        });
+    }
 }
 
 export default AuthController;
