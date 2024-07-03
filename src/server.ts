@@ -12,7 +12,9 @@ function listen() {
 }
 
 mongoose
-    .connect(DotenvConfig.DATABASE_HOST as string)
+    .connect(DotenvConfig.DATABASE_HOST as string, {
+        serverSelectionTimeoutMS: 5000, // Timeout after 5s
+    })
     .then(() => {
         listen();
         Print.info('Connected to mongoDB');
