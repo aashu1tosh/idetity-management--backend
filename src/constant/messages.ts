@@ -13,7 +13,7 @@ export const Message = {
     deleted: 'Successfully deleted',
     created: 'Successfully created',
     error: 'Error occurred',
-    notAuthorized: 'You are not authorized for this task',
+    unAuthorized: 'You are not authorized for this task',
     fetched: 'Successfully fetched data',
     alreadyExist: 'already exists',
     emailSent: 'We have sent code to your email address',
