@@ -12,3 +12,8 @@ export interface IUser {
     password: string;
     role: ROLE;
 }
+
+export interface ILogin {
+    email: string;
+    password: string;
+}
