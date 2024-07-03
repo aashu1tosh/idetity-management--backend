@@ -14,6 +14,9 @@ export class DotenvConfig {
     static JWT_SECRET = process.env.JWT_SECRET;
     static JWT_TOKEN_EXPIRE = process.env.JWT_TOKEN_EXPIRE;
 
+    //ADMIN SEED PASSWORD
+    static ADMIN_PASSWORD = process.env.ADMIN_PASSWORD!;
+
     // DEBUG_MODE
     static DEBUG_MODE = process.env.DEBUG_MODE;
 
