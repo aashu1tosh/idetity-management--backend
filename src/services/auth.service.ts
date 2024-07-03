@@ -1,5 +1,5 @@
 import { ROLE } from '../constant/enum';
-import { IUser } from '../interface/user.interface';
+import { ILogin, IUser } from '../interface/user.interface';
 import User from '../models/user.model';
 import HttpException from '../utils/HttpException.utils';
 import BcryptService from './bcrypt.service';
@@ -28,30 +28,29 @@ class AuthService {
         }
     }
 
-    // async loginUser(data) {
-    //     try {
-    //         let user = await ;
+    async loginUser(data: ILogin) {
+        try {
+            let user = await User.findOne({ email: data.email });
 
-    //         if (user) {
-    //             if (
-    //                 await this.bcryptService.compare(
-    //                     data.password,
-    //                     user.password
-    //                 )
-    //             ) {
-    //                 const token = this.webTokenGenerate.sign(
-    //                     user?.id as string
-    //                 );
-    //                 const { password, createdAt, deletedAt, ...response } =
-    //                     user;
-    //                 return { data: response, token: { accessToken: token } };
-    //             }
-    //         }
-    //         throw HttpException.unauthorized('Invalid Credentials');
-    //     } catch (error: any) {
-    //         throw HttpException.badRequest(error?.message);
-    //     }
-    // }
+            if (user) {
+                if (
+                    await this.bcryptService.compare(
+                        data.password,
+                        user.password
+                    )
+                ) {
+                    const token = this.webTokenGenerate.sign(
+                        user?.id as string
+                    );
+                    const { password, _id, ...response } = user.toObject();
+                    return { token: { accessToken: token } };
+                }
+            }
+            throw HttpException.unauthorized('Invalid Credentials');
+        } catch (error: any) {
+            throw HttpException.badRequest(error?.message);
+        }
+    }
 
     // async updatePassword(data: UpdatePasswordDTO, id: string) {
     //     if (data.oldPassword === data.newPassword)
