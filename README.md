@@ -1,4 +1,4 @@
-## PALM BACKEND
+## BACKEND
 
 ### To run the server follow these steps
 
